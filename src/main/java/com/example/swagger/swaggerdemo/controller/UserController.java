@@ -16,6 +16,7 @@ import java.util.List;
 @Tag(name = "userControl", description = "User Api documentation")
 public class UserController
 {
+    // http://localhost:8080/swagger-ui/index.html
     private final List<User> userList = new ArrayList<>();
 
     //classin const calistiktan sonra bu metod calissin.
