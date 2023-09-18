@@ -1,7 +1,6 @@
 package com.example.swagger.swaggerdemo.model;
 
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,24 +13,24 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 
-@ApiModel(value = "User Api model documentation", description = "Model")
+@Schema(description = "User Api model documentation", title = "Model")
 public class User
 {
-    @ApiModelProperty(value = "Unique id field of user object")
+    @Schema(description = "Unique id field of user object", title = "Model")
     private int Id;
 
-    @ApiModelProperty(value = "UserName field of user object")
+    @Schema(description = "UserName field of user object", title = "Model")
     private String userName;
 
-    @ApiModelProperty(value = "firstName field of user object")
+    @Schema(description = "firstName field of user object", title = "Model")
     private String firstName;
 
-    @ApiModelProperty(value = "lastName field of user object")
+    @Schema(description = "lastName field of user object", title = "Model")
     private String lastName;
 
-    @ApiModelProperty(value = "emailAddress field of user object")
+    @Schema(description = "emailAddress field of user object", title = "Model")
     private String emailAddress;
 
-    @ApiModelProperty(value = "Date field of user object")
+    @Schema(description = "Date field of user object", title = "Model")
     private Date date;
 }

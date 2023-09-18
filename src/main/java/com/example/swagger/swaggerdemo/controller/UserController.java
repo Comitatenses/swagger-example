@@ -1,8 +1,8 @@
 package com.example.swagger.swaggerdemo.controller;
 
 import com.example.swagger.swaggerdemo.model.User;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,7 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/user")
-@Api(value = "User Api documentation")
+@Tag(name = "userControl", description = "User Api documentation")
 public class UserController
 {
     private final List<User> userList = new ArrayList<>();
@@ -27,14 +27,18 @@ public class UserController
     }
 
     @PostMapping
-    @ApiOperation(value = "New User adding method")
+    @Operation(
+            summary = "New User adding method",
+            description = "New User adding method")
     public ResponseEntity<User> save(@RequestBody User user) {
         userList.add(user);
         return ResponseEntity.ok(user);
     }
 
     @GetMapping
-    @ApiOperation(value = "User list method")
+    @Operation(
+            summary = "User list method",
+            description = "User list method")
     public ResponseEntity<List<User>> getAll() {
         return ResponseEntity.ok(userList);
     }
